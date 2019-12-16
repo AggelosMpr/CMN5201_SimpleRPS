@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/try.unity
-=======
-- path: Assets/Scenes/Table.unity
->>>>>>> master
   isLoaded: 1
   isActive: 1
