@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\isDragging.cs" />
      <Compile Include="Assets\Scripts\DropZone.cs" />
      <Compile Include="Assets\Scripts\isDragging.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
