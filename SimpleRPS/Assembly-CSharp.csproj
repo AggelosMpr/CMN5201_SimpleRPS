@@ -53,8 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\DropZone.cs" />
      <Compile Include="Assets\Scripts\isDragging.cs" />
+=======
+     <Compile Include="Assets\isDragging.cs" />
+>>>>>>> master
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/BAgge/Desktop/SimpleRPS_UNITY/CMN5201_SimpleRPS/SimpleRPS/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

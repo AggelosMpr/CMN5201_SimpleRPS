@@ -11,9 +11,14 @@ GameObject:
   - component: {fileID: 350872860470635246}
   - component: {fileID: 350872860470635240}
   - component: {fileID: 350872860470635241}
+<<<<<<< HEAD
   - component: {fileID: 114849205353747368}
   - component: {fileID: 114457012230297062}
   - component: {fileID: 225616810648520102}
+=======
+  - component: {fileID: 114114476277670344}
+  - component: {fileID: 114849205353747368}
+>>>>>>> master
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -75,7 +80,11 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+<<<<<<< HEAD
 --- !u!114 &114849205353747368
+=======
+--- !u!114 &114114476277670344
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,10 +93,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 350872860470635247}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 0f21b4a7ccc4b1144b6f1d9d196dbf41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114457012230297062
+=======
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 5
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 350872860470635247}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 350872860470635247}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
+--- !u!114 &114849205353747368
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,6 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 350872860470635247}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -119,3 +168,8 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+=======
+  m_Script: {fileID: 11500000, guid: 0f21b4a7ccc4b1144b6f1d9d196dbf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> master
