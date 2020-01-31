@@ -21,6 +21,7 @@ public class DropZone : TurnSystem,IDropHandler//,IPointerEnterHandler,IPointerE
     Sprite Rock;
 
     public static bool nextTurn = false;
+    public static int turns = 1;
 
     /*public void OnPointerEnter(PointerEventData pointerEventData)
     {
@@ -31,12 +32,16 @@ public class DropZone : TurnSystem,IDropHandler//,IPointerEnterHandler,IPointerE
     public void OnPointerExit(PointerEventData pointerEventData)
     {       
 
-
     }*/
+    public void Update()
+    {
+        Debug.Log(turns);
+        Debug.Log(nextTurn);
+    }
     public void OnDrop(PointerEventData pointerEventData)
     {
-        nextTurn = false;
-        if (this.CompareTag("Field"))
+        Debug.Log("On Drop Running");
+        if (this.CompareTag("Field") && turns <= 10)
         {
             
             isDragging d= pointerEventData.pointerDrag.GetComponent<isDragging>();

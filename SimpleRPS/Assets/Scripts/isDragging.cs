@@ -5,8 +5,13 @@ using UnityEngine.EventSystems;
 
 public class isDragging : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHandler
 {
-    [HideInInspector]
+    
     public Transform StartingZone = null;
+
+    public void Start()
+    {
+
+    }
     public void OnBeginDrag(PointerEventData cardTransform)
     {
         StartingZone = this.transform.parent;
@@ -22,4 +27,5 @@ public class isDragging : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDrag
         this.transform.SetParent (StartingZone);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
+
 }

@@ -19,20 +19,47 @@ public class TurnSystem : MonoBehaviour
     }
     IEnumerator PlayGame()
     {
-        
+          while (DropZone.turns < 10)
+        {
         state = GameState.PlayerTurn;
         PlayerTurn();
-        yield return new WaitUntil(() => DropZone.nextTurn = true);
+        yield return new WaitUntil(() => DropZone.nextTurn == true);
+            DropZone.turns += 1;
+            DropZone.nextTurn = false;
         EnemyTurn();
+        yield return new WaitUntil(() => DropZone.nextTurn == true);
+            DropZone.turns += 1;
+            DropZone.nextTurn = false;
+        }
+        Debug.Log("Game Ended");
     }
     void PlayerTurn()
     {
-        player.GetComponentInChildren<isDragging>(false);
-        enemy.GetComponentInChildren<isDragging>(false);
+
+      isDragging[] playerCards = player.GetComponentsInChildren<isDragging>();
+      isDragging[] enemyCards =  enemy.GetComponentsInChildren<isDragging>();
+
+        foreach (isDragging drag in playerCards)
+        {
+            drag.enabled = true;
+        }
+        foreach (isDragging drag in enemyCards)
+        {
+            drag.enabled = false;
+        }
     }
     void EnemyTurn()
     {
-        player.GetComponentInChildren<isDragging>(false);
-        enemy.GetComponentInChildren<isDragging>(false);
+        isDragging[] playerCards = player.GetComponentsInChildren<isDragging>();
+        isDragging[] enemyCards = enemy.GetComponentsInChildren<isDragging>();
+
+        foreach (isDragging drag in playerCards)
+        {
+            drag.enabled = false;
+        }
+        foreach (isDragging drag in enemyCards)
+        {
+            drag.enabled = true;
+        }
     }
 }
