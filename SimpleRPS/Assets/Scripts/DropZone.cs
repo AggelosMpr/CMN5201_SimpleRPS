@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DropZone : MonoBehaviour,IDropHandler//,IPointerEnterHandler,IPointerExitHandler
+//htan monobehavior an xreiastei kapote
+public class DropZone : TurnSystem,IDropHandler//,IPointerEnterHandler,IPointerExitHandler
 {
     [SerializeField]
     Image TransformToPaper;
@@ -19,6 +20,8 @@ public class DropZone : MonoBehaviour,IDropHandler//,IPointerEnterHandler,IPoint
     [SerializeField]
     Sprite Rock;
 
+    public static bool nextTurn = false;
+
     /*public void OnPointerEnter(PointerEventData pointerEventData)
     {
         
@@ -31,7 +34,8 @@ public class DropZone : MonoBehaviour,IDropHandler//,IPointerEnterHandler,IPoint
 
     }*/
     public void OnDrop(PointerEventData pointerEventData)
-    {       
+    {
+        nextTurn = false;
         if (this.CompareTag("Field"))
         {
             
@@ -43,16 +47,48 @@ public class DropZone : MonoBehaviour,IDropHandler//,IPointerEnterHandler,IPoint
             {
                 TransformToPaper.sprite = Paper;
                 d.StartingZone = this.transform.parent.parent;
+                if (TurnSystem.state == GameState.PlayerTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.EnemyTurn;
+                    
+                }
+                else if(TurnSystem.state == GameState.EnemyTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.PlayerTurn;
+                }
+                
             }
             else if (d.CompareTag("ToScissors"))
             {
                 TransformToScissors.sprite = Scissors;
                 d.StartingZone = this.transform.parent.parent;
+                if (TurnSystem.state == GameState.PlayerTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.EnemyTurn;
+                }
+                else if (TurnSystem.state == GameState.EnemyTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.PlayerTurn;
+                }
             }
             else if (d.CompareTag("ToRock"))
             {
                 TransformToRock.sprite = Rock;
                 d.StartingZone = this.transform.parent.parent;
+                if (TurnSystem.state == GameState.PlayerTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.EnemyTurn;
+                }
+                else if (TurnSystem.state == GameState.EnemyTurn)
+                {
+                    nextTurn = true;
+                    TurnSystem.state = GameState.PlayerTurn;
+                }
             }
         }
     }

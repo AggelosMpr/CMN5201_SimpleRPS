@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class isDragging : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDragHandler
 {
+    [HideInInspector]
     public Transform StartingZone = null;
     public void OnBeginDrag(PointerEventData cardTransform)
     {
