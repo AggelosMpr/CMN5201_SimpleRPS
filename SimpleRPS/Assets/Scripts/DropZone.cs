@@ -25,7 +25,7 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
 
             isDragging d = pointerEventData.pointerDrag.GetComponent<isDragging>();
 
-            if (d.fromElement == BoardManager.Instance.GetBoardElement(dropZoneIndex)) {
+            if (d.fromElement == BoardManager.Instance.GetBoardElement(dropZoneIndex) || d.fromElement == "3") {
                 BoardManager.Instance.SetBoardElement(d.toElement, dropZoneIndex);
 
                 if (TurnSystem.state == GameState.PlayerTurn) {

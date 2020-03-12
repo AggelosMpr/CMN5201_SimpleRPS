@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3701052192259166061}
   - component: {fileID: 3596261372770341071}
   m_Layer: 5
-  m_Name: CardNext (1)
+  m_Name: 3ToWater
   m_TagString: ToScissors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5264579935884083325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d80aaf4f8d6f40348b6def386a180e75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d58f20b104fbbca4d857143e308d9d44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75,6 +75,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &3700868960599691059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingZone: {fileID: 0}
+  fromElement: 3
+  toElement: Water
 --- !u!114 &3701052192259166061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5264579935884083325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
