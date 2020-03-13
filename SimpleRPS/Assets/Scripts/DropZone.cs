@@ -40,7 +40,9 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
                 Destroy(d.gameObject);
 
             }
+          
         }
+       
         else {
             return;
         }

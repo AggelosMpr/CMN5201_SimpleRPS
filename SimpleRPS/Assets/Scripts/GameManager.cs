@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour
 
     public void startApp()
     {
-        SceneManager.LoadScene("Board");
         PlayerPrefs.SetInt("enemyPoints", 0);
         PlayerPrefs.SetInt("myPoints", 0);
+        SceneManager.LoadScene("Board");
+        
     }
 
     public void Menu()

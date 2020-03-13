@@ -23,8 +23,10 @@ public class isDragging : MonoBehaviour, IBeginDragHandler,IDragHandler,IEndDrag
     }
     public void OnEndDrag(PointerEventData cardTransform)
     {
+      
         this.transform.SetParent (StartingZone);
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+       
     }
 
 }
