@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-//htan monobehavior an xreiastei kapote
-public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointerExitHandler
+
+public class DropZone : TurnSystem, IDropHandler
 {
     [SerializeField]
     int dropZoneIndex;
@@ -13,6 +13,8 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
     private Sprite elementSprite;
     public static bool nextTurn = false;
     public static int turns = 1;
+    [SerializeField]
+    private AudioSource playCard;
 
     public void SetSprite(Sprite newSprite) {
         elementSprite = newSprite;
@@ -23,7 +25,7 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
         isDragging d = pointerEventData.pointerDrag.GetComponent<isDragging>();
         if (this.CompareTag("Discard") && turns <= 10)
         {
-            
+            playCard.Play();
             PassTurn();
             Destroy(d.gameObject);
         }
@@ -32,6 +34,7 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
             if (d.fromElement == BoardManager.Instance.GetBoardElement(dropZoneIndex) || d.fromElement == "3") {
 
                 BoardManager.Instance.SetBoardElement(d.toElement, dropZoneIndex);
+                playCard.Play();
                 PassTurn();
                 Destroy(d.gameObject);
             }
