@@ -20,31 +20,38 @@ public class DropZone : TurnSystem, IDropHandler//,IPointerEnterHandler,IPointer
     }
     public void OnDrop(PointerEventData pointerEventData) {
 
-        if (this.CompareTag("BoardElement") && turns <= 10) {
-
-
-            isDragging d = pointerEventData.pointerDrag.GetComponent<isDragging>();
+        isDragging d = pointerEventData.pointerDrag.GetComponent<isDragging>();
+        if (this.CompareTag("Discard") && turns <= 10)
+        {
+            
+            PassTurn();
+            Destroy(d.gameObject);
+        }
+        else if (this.CompareTag("BoardElement") && turns <= 10) {
 
             if (d.fromElement == BoardManager.Instance.GetBoardElement(dropZoneIndex) || d.fromElement == "3") {
+
                 BoardManager.Instance.SetBoardElement(d.toElement, dropZoneIndex);
-
-                if (TurnSystem.state == GameState.PlayerTurn) {
-                    nextTurn = true;
-                    TurnSystem.state = GameState.EnemyTurn;
-
-                }
-                else if (TurnSystem.state == GameState.EnemyTurn) {
-                    nextTurn = true;
-                    TurnSystem.state = GameState.PlayerTurn;
-                }
+                PassTurn();
                 Destroy(d.gameObject);
-
             }
-          
-        }
-       
+        }    
         else {
             return;
+        }
+    }
+    public void PassTurn()
+    {
+        if (TurnSystem.state == GameState.PlayerTurn)
+        {
+            nextTurn = true;
+            TurnSystem.state = GameState.EnemyTurn;
+
+        }
+        else if (TurnSystem.state == GameState.EnemyTurn)
+        {
+            nextTurn = true;
+            TurnSystem.state = GameState.PlayerTurn;
         }
     }
 }

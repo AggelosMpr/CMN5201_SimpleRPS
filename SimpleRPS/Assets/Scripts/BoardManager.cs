@@ -8,13 +8,13 @@ using UnityEngine.UI;
 public class BoardManager : MonoBehaviour {
     string[] Board;
     private int currentZoneIndex = -1;
-    //public DropZone[] dropZones = new DropZone[6];
-    public DropZone[] dropZones = new DropZone[7];
+    public DropZone[] dropZones = new DropZone[6];
     public GameObject[] winGlow = new GameObject[3];
     public GameObject[] loseGlow = new GameObject[3];
     public int goalPoints;
     public Text p1Score;
     public Text p2Score;
+
 
 
 
@@ -27,7 +27,7 @@ public class BoardManager : MonoBehaviour {
     private void Awake() {
         if (m_instance == null) {
             m_instance = this;
-            Board = new string[] { "Fire", "Water", "Leaf", "Fire", "Water", "Leaf","Discard"};
+            Board = new string[] { "Fire", "Water", "Leaf", "Fire", "Water", "Leaf"};
         }
         else {
             Destroy(this.gameObject);
@@ -125,15 +125,18 @@ public class BoardManager : MonoBehaviour {
         }
 
         else {
-            //TO DO: Still need to create these scenes.
+          
             if (PlayerPrefs.GetInt("myPoints") >= goalPoints && PlayerPrefs.GetInt("enemyPoints") >= goalPoints) {
-                SceneManager.LoadScene("Draw");
+                SceneManager.LoadScene("DrawScene");
+               
             }
             else if(PlayerPrefs.GetInt("myPoints") >= goalPoints) {
-                SceneManager.LoadScene("Win");
+                SceneManager.LoadScene("WinScene");
+                
             }
             else if(PlayerPrefs.GetInt("enemyPoints") >= goalPoints) {
-                SceneManager.LoadScene("Lose");
+                SceneManager.LoadScene("LoseScene");
+                
             }
         }
     }
