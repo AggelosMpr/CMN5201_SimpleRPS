@@ -68,9 +68,11 @@
     <Compile Include="Assets\Scripts\CardInHand.cs" />
     <Compile Include="Assets\Scripts\DropZone.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\InfoMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerDeck.cs" />
     <Compile Include="Assets\Scripts\PlayerHand.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
+    <Compile Include="Assets\Scripts\VolumeValueChange.cs" />
     <Compile Include="Assets\Scripts\isDragging.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Depwn/Documents/Unity 2017 Projects/UnityRepositoryNew/CMN5201_SimpleRPS/SimpleRPS/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
